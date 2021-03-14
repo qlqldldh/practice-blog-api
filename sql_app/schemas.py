@@ -6,6 +6,10 @@ class PostBase(BaseModel):
     content: str
 
 
+class PostCreate(PostBase):
+    pass
+
+
 class Post(PostBase):
     id: int
     created_at: str
