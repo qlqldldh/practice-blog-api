@@ -1,7 +1,7 @@
 from sql_app import models
 from sql_app.database import Session
 from sql_app.schemas import PostCreate, Post
-from utils import get_dict_from_model
+from sql_app.utils import get_dict_from_model
 
 
 def create_post(db: Session, post: PostCreate):
