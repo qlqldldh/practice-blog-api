@@ -1,11 +1,10 @@
-from fastapi import FastAPI, Depends, status
+from fastapi import Depends, status
 
 from sql_app import models, schemas, crud
+from sql_app.base import app
 from sql_app.database import engine, Session
 
 models.Base.metadata.create_all(bind=engine)
-
-app = FastAPI()
 
 
 def get_db():
