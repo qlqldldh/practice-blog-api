@@ -15,10 +15,8 @@ def get_db():
         db.close()
 
 
-@app.post("/posts/", status_code=status.HTTP_201_CREATED)
-async def new_post(title: str, content: str, db: Session = Depends(get_db)):
-    post = schemas.PostCreate(title=title, content=content)
-
+@app.post("/posts", status_code=status.HTTP_201_CREATED)
+async def new_post(post: schemas.PostCreate, db: Session = Depends(get_db)):
     return crud.create_post(db, post)
 
 
