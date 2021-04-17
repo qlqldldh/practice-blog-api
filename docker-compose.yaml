@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+    db:
+        image: "postgres"
+        ports:
+            - "5432:5432"
+        volumes:
+            - "postgres_data:/var/lib/postgresql/data/pgdata"
+        environment:
+            - PGDATA=/var/lib/postgresql/data/pgdata
+            - POSTGRES_USER=dean
+            - POSTGRES_PASSWORD=dean
+            - POSTGRES_DB=dev
+
+volumes:
+    postgres_data:
+        driver: local
+
