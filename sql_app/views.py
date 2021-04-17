@@ -36,3 +36,8 @@ def update_post(post_id: int, post: schemas.Post, db: Session = Depends(get_db))
         return {"message": "cannot update id of post"}
 
     return crud.update_post(db, post)
+
+
+@app.delete("/posts/{post_id}")
+def delete_post(post_id: int, db: Session = Depends(get_db)):
+    crud.delete_post(db, post_id)

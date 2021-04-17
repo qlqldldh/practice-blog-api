@@ -31,3 +31,10 @@ def update_post(db: Session, post: Post):
     db.refresh(db_post)
 
     return db_post
+
+
+def delete_post(db: Session, post_id: int):
+    db_post = db.query(models.Post).get(post_id)
+
+    db.delete(db_post)
+    db.commit()
