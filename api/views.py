@@ -1,8 +1,8 @@
 from fastapi import Depends, status
 
-from sql_app import models, schemas, crud
-from sql_app.base import app
-from sql_app.database import engine, Session
+from api import models, schemas, crud
+from api.base import app
+from api.database import engine, Session
 
 models.Base.metadata.create_all(bind=engine)
 
